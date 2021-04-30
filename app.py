@@ -19,6 +19,7 @@ def index():
 
 @app.route('/libro/<isbn>', methods=["GET","POST"])
 def detalle(isbn):
+    v=False
     for i in documento:
         if i.get('isbn')==isbn:
             titulo=i.get('title')
@@ -27,7 +28,9 @@ def detalle(isbn):
             desc=i.get('longDescription')
             autor=i.get('authors')
             cate=i.get('categories')
-    return render_template("detalle.html",titulo=titulo,miniatura=miniatura, num=num, desc=desc, autor=autor, cate=cate)
+            if i.get('status')=='MEAP':
+                v=True     
+    return render_template("detalle.html",titulo=titulo,miniatura=miniatura, num=num, desc=desc, autor=autor, cate=cate, v=v)
 
 port=os.environ["PORT"]
 app.run('0.0.0.0', int(port), debug=False)
