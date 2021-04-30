@@ -14,11 +14,13 @@
             <li style="color: rgb(10, 85, 36);"><strong>Descripción:</strong> <i>{{desc}}</i></li>
             <li style="color: rgb(10, 85, 36);"><strong>Autor/es:</strong></li> 
             {% for i in autor -%}
-                <ol>
-                <li><i>{{i}}</i></li>
-                </ol>
+                {% if i!="" %}
+                    <ul>
+                        <li><i>{{i}}</i></li>
+                    </ul>
+                {% endif %}
             {% endfor -%}
-            
+
             <li style="color: rgb(10, 85, 36);"><strong>Categorías:</strong> <i>{{cate}}</i></li>
         </ul>        
     </section>
