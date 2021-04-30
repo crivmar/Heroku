@@ -24,7 +24,7 @@
             <p><li style="color: rgb(10, 85, 36);"><strong>Categorías:</strong></li> 
             {% for i in cate -%}
                 <ul>
-                    <li><a href="{{url_for('categoria')}}" style="color: rgb( 10, 85, 36 );">{{i}}</a></li>
+                    <li><a href="/categoria/{{i}}" style="color: rgb( 10, 85, 36 );">{{i}}</a></li>
                 </ul>
             {% endfor -%}</p>
             {% if mensaje %}

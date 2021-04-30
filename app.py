@@ -36,11 +36,11 @@ def detalle(isbn):
     return render_template("detalle.html",titulo=titulo,miniatura=miniatura, num=num, desc=desc, autor=autor, cate=cate, mensaje=mensaje)
 
 @app.route('/categoria/<categoria>', methods=["GET","POST"])
-def categoria(categoria):
+def categoria(cate):
     for i in documento:
-        if categoria==i.get('categories'):
-            titulos=i.get('titulos')
+        if cate==i.get('categories'):
+            titulo=i.get('titulos')
 
-    return render_template ("categoria.html", categoria=categoria, titulos=titulos)
+    return render_template ("categoria.html", cate=cate, titulos=titulo)
 port=os.environ["PORT"]
-app.run('0.0.0.0', int(port), debug=False)
+app.run('0.0.0.0', int(port), debug=True)
