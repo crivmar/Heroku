@@ -7,6 +7,12 @@
 <body style='background-color: rgb(43, 43, 43);'>
     <h1 style="color: rgb(10, 85, 36);">Categorias</h1>
     <section>
+    <h3>{{Categoria}}</h3>
+    <p style='color:rgb(10, 85, 36);'><ul>
+        {% for i in titulo -%}
+            <li><i>{{i}}</i></li>
+        {% endfor -%}
+    </ul></p>
     </section>
 </body>
 </html>
