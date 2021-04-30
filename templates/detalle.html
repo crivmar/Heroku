@@ -27,6 +27,9 @@
                     <li><i>{{i}}</i></li>
                 </ul>
             {% endfor -%}</p>
+            {% if mensaje %}
+                <p style="color: rgb(10, 85, 36);"><strong>{{mensaje}}</strong></p>
+            {% endif %}
         </ul>        
     </section>
 <p><a href="{{url_for('index')}}" style="color: rgb(10, 85, 36);">Volver</a></p>
