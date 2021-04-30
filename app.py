@@ -5,7 +5,17 @@ import os, json
 
 app= Flask(__name__)
 
+## GUARDAR LA INFORMACIÓN ##
 
+with open('./books.json') as f:
+    documento=json.load(f)
+
+
+## PROGRAMA PRINCIPAL ##
+
+@app.route ('/', methods=["GET","POST"])
+def index():
+    
 
 
 
