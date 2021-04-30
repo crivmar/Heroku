@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<title>Biblioteca</title>
 </head>
-<body style='background-color: black;'>
-    <h1 style="color: rgb(163, 0, 0);">El archivo digital de Carlos Rivero</h1>
+<body style='background-color: rgb(43, 43, 43);'>
+    <h1 style="color: rgb(10, 85, 36);">El archivo digital de Carlos Rivero</h1>
     <section>
-    <h2 style="color: rgb(163, 0, 0)">Enlaces</h2>
+    <h2 style="color: rgb(10, 85, 36)">Enlaces</h2>
     <ul>
         {% for i in documento -%}
-            <li><a href='/libro/{{i.isbn}}' style="color: rgb(163, 0, 0);">{{loop.index}} - {{i.title}} </a></li>
+            <li><a href='/libro/{{i.isbn}}' style="color: rgb(10, 85, 36);">{{loop.index}} - {{i.title}} </a></li>
         {% endfor -%}
     </ul>
     </section>
