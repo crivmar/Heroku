@@ -17,7 +17,8 @@ with open('./books.json') as f:
 def index():
     return render_template("index.html",documento=documento)    
 
-
+@app.route('/libro/<isbn>', methods=["GET","POST"])
+def detalle(isbn):
 
 
 port=os.environ["PORT"]
