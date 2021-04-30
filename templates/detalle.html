@@ -12,7 +12,13 @@
         <ul style="color: rgb(10, 85, 36);">
             <li style="color: rgb(10, 85, 36);"><strong>Nº de páginas:</strong> <i>{{num}}</i></li>
             <li style="color: rgb(10, 85, 36);"><strong>Descripción:</strong> <i>{{desc}}</i></li>
-            <li style="color: rgb(10, 85, 36);"><strong>Autor/es:</strong> <i>{{autor}}</i></li>
+            <li style="color: rgb(10, 85, 36);"><strong>Autor/es:</strong></li> 
+            {% for i in autor -%}
+                <ol>
+                <li><i>{{i}}</i></li>
+                </ol>
+            {% endfor -%}
+            
             <li style="color: rgb(10, 85, 36);"><strong>Categorías:</strong> <i>{{cate}}</i></li>
         </ul>        
     </section>
