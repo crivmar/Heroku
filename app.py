@@ -19,7 +19,11 @@ def index():
 
 @app.route('/libro/<isbn>', methods=["GET","POST"])
 def detalle(isbn):
-
+    for i in documento:
+        if i.get('isbn')==isbn:
+            titulo=i.get('title')
+            miniatura=i.get('thumbnailUrl')
+    return render_template("detalle.html",titulo=titulo,miniatura=miniatura)
 
 port=os.environ["PORT"]
 app.run('0.0.0.0', int(port), debug=False)
