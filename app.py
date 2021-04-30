@@ -21,16 +21,18 @@ def index():
 def detalle(isbn):
     mensaje=""
     for i in documento:
-        if i.get('isbn')==isbn:
-            titulo=i.get('title')
-            miniatura=i.get('thumbnailUrl')
-            num=i.get('pageCount')
-            desc=i.get('longDescription')
-            autor=i.get('authors')
-            cate=i.get('categories')
-            if i.get('status')=='MEAP':
-                mensaje='Este libro no ha sido publicado.'
-                     
+        if isbn==i.get("isbn"):
+            try:
+                titulo=i.get('title')
+                miniatura=i.get('thumbnailUrl')
+                num=i.get('pageCount')
+                desc=i.get('longDescription')
+                autor=i.get('authors')
+                cate=i.get('categories')
+                if i.get('status')=='MEAP':
+                    mensaje='Este libro no ha sido publicado.'
+            except:
+                abort(404)
     return render_template("detalle.html",titulo=titulo,miniatura=miniatura, num=num, desc=desc, autor=autor, cate=cate, mensaje=mensaje)
 
 port=os.environ["PORT"]
