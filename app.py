@@ -35,5 +35,8 @@ def detalle(isbn):
                 abort(404)
     return render_template("detalle.html",titulo=titulo,miniatura=miniatura, num=num, desc=desc, autor=autor, cate=cate, mensaje=mensaje)
 
+@app.route('/categoria/<categoria>', methods=["GET","POST"])
+def categoria(categoria):
+
 port=os.environ["PORT"]
 app.run('0.0.0.0', int(port), debug=False)
