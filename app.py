@@ -23,7 +23,11 @@ def detalle(isbn):
         if i.get('isbn')==isbn:
             titulo=i.get('title')
             miniatura=i.get('thumbnailUrl')
-    return render_template("detalle.html",titulo=titulo,miniatura=miniatura)
+            num=i.get('pageCount')
+            desc=i.get('longDescription')
+            autor=i.get('authors')
+            cate=i.get('categories')
+    return render_template("detalle.html",titulo=titulo,miniatura=miniatura, num=num, desc=desc, autor=autor, cate=cate)
 
 port=os.environ["PORT"]
 app.run('0.0.0.0', int(port), debug=False)
