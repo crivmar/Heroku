@@ -7,7 +7,12 @@
 <body style='background-color: black;'>
     <h1 style="color: rgb(163, 0, 0);">El archivo digital de Carlos Rivero</h1>
     <section>
-    
+    <h2 style="color: rgb(163, 0, 0)">Enlaces</h2>
+    <ul>
+        {% for i in documento -%}
+            <li><a href='/libro/{{documento.isbn}}' style="color: rgb(163, 0, 0);">{{loop.index}} - {{documento.title}} </a></li>
+        {% endfor -%}
+    </ul>
     </section>
 </body>
 </html>
