@@ -21,7 +21,11 @@
                 {% endif %}
             {% endfor -%}
 
-            <li style="color: rgb(10, 85, 36);"><strong>Categorías:</strong> <i>{{cate}}</i></li>
+            <li style="color: rgb(10, 85, 36);"><strong>Categorías:</strong></li> 
+            {% for i in cate -%}
+                <ul>
+                    <li><i>{{i}}</i></li>
+                </ul>
         </ul>        
     </section>
 </body>
