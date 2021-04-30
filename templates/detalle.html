@@ -10,24 +10,25 @@
     <section>    
         <p style="color: rgb(10, 85, 36);"><strong>Este libro contiene...</strong></p>
         <ul style="color: rgb(10, 85, 36);">
-            <li style="color: rgb(10, 85, 36);"><strong>Nº de páginas:</strong> <i>{{num}}</i></li>
-            <li style="color: rgb(10, 85, 36);"><strong>Descripción:</strong> <i>{{desc}}</i></li>
-            <li style="color: rgb(10, 85, 36);"><strong>Autor/es:</strong></li> 
+            <p><li style="color: rgb(10, 85, 36);"><strong>Nº de páginas:</strong> <i>{{num}}</i></li></p>
+            <p><li style="color: rgb(10, 85, 36);"><strong>Descripción:</strong> <i>{{desc}}</i></li></p>
+            <p><li style="color: rgb(10, 85, 36);"><strong>Autor/es:</strong></li> 
             {% for i in autor -%}
                 {% if i!="" %}
                     <ul>
                         <li><i>{{i}}</i></li>
                     </ul>
                 {% endif %}
-            {% endfor -%}
+            {% endfor -%}</p>
 
-            <li style="color: rgb(10, 85, 36);"><strong>Categorías:</strong></li> 
+            <p><li style="color: rgb(10, 85, 36);"><strong>Categorías:</strong></li> 
             {% for i in cate -%}
                 <ul>
                     <li><i>{{i}}</i></li>
                 </ul>
-            {% endfor -%}
+            {% endfor -%}</p>
         </ul>        
     </section>
+<p><a href="{{url_for('index')}}" style="color: rgb(10, 85, 36);">Volver</a></p>
 </body>
 </html>
