@@ -37,6 +37,10 @@ def detalle(isbn):
 
 @app.route('/categoria/<categoria>', methods=["GET","POST"])
 def categoria(categoria):
+    for i in documento:
+        if categoria==i.get('categories'):
+            titulos=i.get('titulos')
 
+    return render_template ("categoria.html", categoria=categoria, titulos=titulos)
 port=os.environ["PORT"]
 app.run('0.0.0.0', int(port), debug=False)
