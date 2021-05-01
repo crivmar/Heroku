@@ -9,8 +9,8 @@
     <section>
     <h2 style="color: rgb(10, 85, 36);"><strong>{{categoria}}</strong></h2>
     <p><ul>
-        {% for i in titulos -%}
-            <li style="color: rgb(10, 85, 36);"><i>{{i}}</i></li>
+        {% for i,j in diccionario.items() -%}
+            <li><a href="/libro/{{i}}" style="color: rgb( 10, 85, 36 );">{{j}}</a></li>
         {% endfor -%}
     </ul></p>
     </section>
