@@ -39,7 +39,7 @@ def detalle(isbn):
 def categoria(categoria):
     titulos=[]
     for i in documento:
-        if categoria==i.get('categories'):
+        if categoria in i.get('categories'):
             titulos.append(i.get('title'))    
     
     return render_template("categoria.html", categoria=categoria, titulos=titulos)
