@@ -21,7 +21,7 @@ def index():
 def detalle(isbn):
     mensaje=""
     for i in documento:
-        if isbn in i.get("isbn"):
+        if isbn==i.get("isbn"):
             try:
                 titulo=i.get('title')
                 miniatura=i.get('thumbnailUrl')
@@ -44,4 +44,4 @@ def categoria(categoria):
     
     return render_template("categoria.html", categoria=categoria, diccionario=diccionario)
 port=os.environ["PORT"]
-app.run('0.0.0.0', int(port), debug=false)
+app.run('0.0.0.0', int(port), debug=False)
